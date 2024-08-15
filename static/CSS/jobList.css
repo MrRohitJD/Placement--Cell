@@ -1,0 +1,150 @@
+#link1,
+#link2,
+#link3,
+#link4 {
+
+  font-family: "Overpass", sans-serif;
+  color: #18304B;
+  font-weight: 700;
+  padding: 20px 1px;
+  display: block;
+  font-size: 18px;
+  transition: all .3s ease-out 0s;
+  text-transform: capitalize;
+  position: relative;
+
+}
+
+.how-it-works-container {
+    position: relative;
+    /* background-image: url('imgs/Twoabout.jpg'); Update with the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    width: auto;
+    height: 350px;
+}
+ 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b397bf0; /* Adjust the color and opacity for the overlay */
+    z-index: 1;
+}
+
+.hero-cap{
+    /* font-size: 1em; */
+    color: #ffffff; /* Adjust this color if needed */
+    margin: 0;
+    z-index: 2;
+    position: relative;
+    align-content: center;
+}
+.navigation{
+  background-color: #eaeeff;
+}
+
+/* -----------------job sort */
+.job-card {
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  .job-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .job-title {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
+  
+  .company {
+    color: #6c757d;
+  }
+  
+  .location,
+  .salary {
+    color: #6c757d;
+  }
+  
+  .full-time-badge {
+    border-radius: 15px;
+    padding: 5px 10px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    display: inline-block;
+    text-decoration: none;
+  
+  }
+  .full-time-badge:hover {
+    color: #ffffff;
+    background-color: #0057b3b9;
+  }
+  
+  .time-ago {
+    color: #6c757d;
+  }
+  
+  .featured-jobs-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .recent-job {
+    color: #ff4081;
+    text-align: center;
+    margin-bottom: -10px;
+  }
+  
+  
+
+  /* ---------------------footer */
+.footer {
+    background-color: #101223;
+    color: #fff;
+    padding: 50px 0;
+  }
+  .footer .footer-column {
+    margin-bottom: 30px;
+  }
+  .footer .footer-column h5 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ff3366;
+  }
+  .footer .footer-column p, .footer .footer-column a {
+    color: #bbb;
+    font-size: 14px;
+  }
+  .footer .footer-column a:hover {
+    color: #fff;
+  }
+  .footer .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  .footer .social-icons a {
+    color: #bbb;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .footer .social-icons a:hover {
+    color: #ff3366;
+  }
+  .footer .stats span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff3366;
+  }

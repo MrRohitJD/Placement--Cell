@@ -1,0 +1,211 @@
+#link1,
+#link2,
+#link3,
+#link4 {
+
+  font-family: "Overpass", sans-serif;
+  color: #18304B;
+  font-weight: 700;
+  padding: 20px 1px;
+  display: block;
+  font-size: 18px;
+  transition: all .3s ease-out 0s;
+  text-transform: capitalize;
+  position: relative;
+
+}
+
+
+.how-it-works-container {
+    position: relative;
+    /* background-image: url('imgs/Twoabout.jpg'); Update with the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+    width: auto;
+    height: 350px;
+}
+ 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2b397bf0; /* Adjust the color and opacity for the overlay */
+    z-index: 1;
+}
+
+.hero-cap{
+    /* font-size: 1em; */
+    color: #ffffff; /* Adjust this color if needed */
+    margin: 0;
+    z-index: 2;
+    position: relative;
+    align-content: center;
+}
+.navigation{
+  background-color: #eaeeff;
+}
+
+/* -----------------------about baner 3rd */
+.content-section {
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+  }
+  .content-section .text-content {
+    flex: 1;
+    padding-right: 20px;
+  }
+  .content-section .image-content {
+    flex: 1;
+    text-align: center;
+  }
+  .content-section .image-content img {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  .badge-custom {
+    position: absolute;
+      bottom: 20px;
+      left: -20px;
+      background-color: #1f2b7b;
+      color: #fff;
+      padding: 42px 59px;
+      border-radius: 7px;
+  }
+  .button-custom {
+    background-color: #ff3366;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  .highlight {
+    color: #ff3366;
+    font-weight: bold;
+  }
+
+   /* ------------------------------ sec img  job step  */
+
+   .how-it-works-container {
+    position: relative;
+    background-image: url('baner2.png'); /* Update with the correct path to your image */
+    background-size: cover;
+    background-position: center;
+    padding: 50px 0;
+    text-align: center;
+    color: white;
+}
+ 
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0); /* Adjust the color and opacity for the overlay */
+    z-index: 1;
+}
+ 
+.section-title {
+    font-size: 1em;
+    color: #ff4c4c; /* Adjust this color if needed */
+    margin: 0;
+    z-index: 2;
+    position: relative;
+}
+ 
+.main-title {
+    font-size: 2.5em;
+    margin: 10px 0 30px 0;
+    z-index: 2;
+    position: relative;
+}
+ 
+.steps-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    z-index: 2;
+    position: relative;
+}
+ 
+.step {
+    background: #26317f; /* Adjust the color and opacity for the step background */
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    max-width: 300px;
+    min-width: 200px;
+    border-radius: 8px;
+}
+ 
+.step-icon {
+  width: 71px;
+  height: 107px;
+  margin-bottom: 10px;
+  transition:   transform 650ms ease-in-out, filter 650ms ease-in-out;
+}
+  .step-icon:hover {
+    transform: scale(1.1) rotateY(180deg);
+    filter: brightness(1.2);
+  }
+ 
+.step h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+ 
+.step p {
+    font-size: 1em;
+    margin: 0;
+}
+
+/* ---------------------footer */
+.footer {
+  background-color: #101223;
+  color: #fff;
+  padding: 50px 0;
+}
+.footer .footer-column {
+  margin-bottom: 30px;
+}
+.footer .footer-column h5 {
+  margin-bottom: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: #ff3366;
+}
+.footer .footer-column p, .footer .footer-column a {
+  color: #bbb;
+  font-size: 14px;
+}
+.footer .footer-column a:hover {
+  color: #fff;
+}
+.footer .footer-bottom {
+  border-top: 1px solid #333;
+  padding-top: 20px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+.footer .social-icons a {
+  color: #bbb;
+  margin-right: 10px;
+  font-size: 18px;
+}
+.footer .social-icons a:hover {
+  color: #ff3366;
+}
+.footer .stats span {
+  font-size: 20px;
+  font-weight: bold;
+  color: #ff3366;
+}

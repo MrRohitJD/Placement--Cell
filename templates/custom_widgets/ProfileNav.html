@@ -1,0 +1,42 @@
+{% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static "CSS/ProfileNav.css" %}">
+
+    <nav class="container-fluid navbar navbar-expand-lg  " style="background-color: #eaeeff;">
+      <div class="container-fluid " style="    margin-left: 29px;" >
+        <a class="navbar-brand" href="/"><b>Eva</b></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active p-3" id="link1" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-3" id="link2" href="/joblist/">Job List</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link p-3 pr-4 mr-4" id="link3" href="/about/">About</a>
+            </li>
+          </ul>
+          {% if user.is_authenticated %}
+                    <dir class="" style="margin-left: 10px;">
+                        <a type="button" href="/logout/" class="btn btn-outline-danger mr-3">Logout</a>
+                    </dir>
+                    <div>
+                        <a href="{{userType}}"><img src="https://th.bing.com/th/id/OIP.wRtvON_8JKRQghdROw5QvQHaHa?rs=1&pid=ImgDetMain"
+                            class="rounded-circle mx-4 d-block shadow my-auto  bg-body-tertiary rounded" alt="Rostelecom" width="50px"
+                            height="50px"></a>
+                         </div>
+                    {% else %}
+
+                    <div class="sl p-2">
+                        <a type="button" href="/register/" class="btn btn-outline-danger pl-4 ml-2">Register</a>
+                        <a type="button" href="/login/" class="btn btn-outline-danger">Login</a>
+                      </div>
+                      {% endif %}
+          
+        </div>
+      </div>
+    </nav>

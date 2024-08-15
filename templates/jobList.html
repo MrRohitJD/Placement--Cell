@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+        {% load static %}
+  <link rel="stylesheet"  href="{% static "CSS\jobList.css" %}">
+
+    <link rel="stylesheet" href="jobList.css">
+    
+</head>
+
+<body>
+    <div class=" navigation container-fluid">
+        <nav class="navbar navbar-expand-lg  mx-4">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/"><b>Eva</b></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active p-3" id="link1" aria-current="page" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3" id="link2" href="/joblist/">Job List</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link p-3 pr-4 mr-4" id="link3" href="/about/">About</a>
+                        </li>
+                    </ul>
+                    {% if user.is_authenticated %}
+                    <dir class="" style="margin-left: 10px;">
+                        <a type="button" href="/logout/" class="btn btn-outline-danger mr-3">Logout</a>
+                    </dir>
+                    <div>
+                        <a href="/{{logUserType}}/"><img src="https://th.bing.com/th/id/OIP.wRtvON_8JKRQghdROw5QvQHaHa?rs=1&pid=ImgDetMain"
+                            class="rounded-circle mx-4 d-block shadow my-auto  bg-body-tertiary rounded" alt="Rostelecom" width="50px"
+                            height="50px"></a>
+                         </div>
+                    {% else %}
+
+                    <div class="sl p-2">
+                        <a type="button" href="/register/" class="btn btn-outline-danger pl-4 ml-2">Register</a>
+                        <a type="button" href="/login/" class="btn btn-outline-danger">Login</a>
+                      </div>
+                      {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- -----------------baner img  -->
+    <div class="how-it-works-container " style="background-image: url('{% static "imgs/Twoabout.jpg" %}');">
+        <div class="overlay"></div>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-xl-12 mt-5">
+                    <div class="hero-cap ">
+                        <h2>Get your job</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------- sort jobs -->
+
+    <div class="container my-5">
+        <div class="col-xl-12">
+        <div class="row">
+            <div class="col-12">
+            <div class="small-section-tittle2 mb-45">
+            <div class="ion"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="12px">
+            <path fill-rule="evenodd" fill="rgb(27, 207, 107)" d="M7.778,12.000 L12.222,12.000 L12.222,10.000 L7.778,10.000 L7.778,12.000 ZM-0.000,-0.000 L-0.000,2.000 L20.000,2.000 L20.000,-0.000 L-0.000,-0.000 ZM3.333,7.000 L16.667,7.000 L16.667,5.000 L3.333,5.000 L3.333,7.000 Z"></path>
+            </svg>
+            </div>
+            <h4>Filter Jobs</h4>
+            </div>
+            </div>
+            </div>
+        </div>
+        <!-- <h4>Filter Jobs</h4> -->
+        <div class="row">
+            <div class="col-lg-3">
+                <!-- Filter Jobs Sidebar -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        Filter Jobs
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <label for="jobCategory" class="form-label">Job Category</label>
+                                <select id="jobCategory" class="form-select">
+                                    <option selected>All Category</option>
+                                    <!-- Add other categories here -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Job Type</label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="fullTime" checked>
+                                        <label class="form-check-label" for="fullTime">Full Time</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="partTime">
+                                        <label class="form-check-label" for="partTime">Part Time</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="remote">
+                                        <label class="form-check-label" for="remote">Remote</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="freelance">
+                                        <label class="form-check-label" for="freelance">Freelance</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="jobLocation" class="form-label">Job Location</label>
+                                <select id="jobLocation" class="form-select">
+                                    <option selected>Anywhere</option>
+                                    <!-- Add other locations here -->
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Experience</label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="experience1">
+                                        <label class="form-check-label" for="experience1">1-2 Years</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="experience2" checked>
+                                        <label class="form-check-label" for="experience2">2-3 Years</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="experience3">
+                                        <label class="form-check-label" for="experience3">3-6 Years</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="experience4">
+                                        <label class="form-check-label" for="experience4">6+ Years</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Posted Within</label>
+                                <div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="postedAny">
+                                        <label class="form-check-label" for="postedAny">Any</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="postedToday" checked>
+                                        <label class="form-check-label" for="postedToday">Today</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="posted2Days">
+                                        <label class="form-check-label" for="posted2Days">Last 2 days</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="posted3Days">
+                                        <label class="form-check-label" for="posted3Days">Last 3 days</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="posted5Days">
+                                        <label class="form-check-label" for="posted5Days">Last 5 days</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="posted10Days">
+                                        <label class="form-check-label" for="posted10Days">Last 10 days</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <!-- Job Listings -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>{{total_jobs}} Jobs found</div>
+                    <div>
+                        Sort by:
+                        <select class="form-select d-inline-block w-auto" aria-label="Sort by">
+                            <option selected>Name</option>
+                            <!-- Add other sort options here -->
+                        </select>
+                    </div>
+                </div>
+                {% for post in post reversed %}
+                <div class="job-card">
+                    <div class="d-flex align-items-center">
+                        <img src="https://th.bing.com/th/id/OIP.pSfodJvLNnP9vC6MP99aRwHaFM?rs=1&pid=ImgDetMain" alt="Ziggo" width="50" height="50" class="me-3">
+                        <a href="/jobdetails/{{ post.id }}"  style="text-decoration: none; color:#2d4358;">
+                            <div class="row">
+                                <p class="job-title mb-1">{{ post.job_title }}</p>
+                                <p class="company mb-1">Company Name- {{ post.company_name }}, Education- {{ post.qualification }}, Experience- {{ post.experience }}</p>
+                            </div>
+                        </a>
+                        <div class="ms-auto text-end">
+                            {% if user.is_authenticated %}
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="job_post" value="{{ post.id }}">
+                                <div class="text-center">
+                                    <button type="button" class="full-time-badge mb-2" data-bs-toggle="modal" data-bs-target="#modal-{{ post.id }}">Apply</button>
+                                    <a href="/jobdetails/{{ post.id }}" class="full-time-badge mb-2 mr-1">Job Details</a>
+                                </div>
+                                <!-- Modal -->
+                                <div class="modal fade" id="modal-{{ post.id }}" tabindex="-1" aria-labelledby="modalLabel-{{ post.id }}" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="modalLabel-{{ post.id }}">Apply for {{ post.job_title }}</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body text-center">
+                                                <b><i>Recommended :</i> First fill Student information in student dashboards <a href="{{ logUserType }}">click here</a></b>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Apply</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            {% else %}
+                            <button type="button" class="full-time-badge mb-2" disabled>Apply</button>
+                            <a href="/jobdetails/{{ post.id }}" class="full-time-badge mb-2 mr-1">Job Details</a>
+                            {% endif %}
+                            <p class="time-ago">Location- {{ post.location |slice:":5" }}.. </p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            
+                
+                <!-- Repeat the above job-card div for more job listings -->
+            </div>
+        </div>
+    </div>
+<!-- -------------------footer -->
+
+<footer class="footer">
+    <div class="container">
+      <div class="row">
+        <!-- About Us -->
+        <div class="col-md-3 footer-column">
+          <h5>About Us</h5>
+          <p>Heaven fruitful doesn't cover lesser days appear creeping seasons so behold.</p>
+        </div>
+        <!-- Contact Info -->
+        <div class="col-md-3 footer-column">
+          <h5>Contact Info</h5>
+          <p>Address: Your address goes here, your demo address.</p>
+          <p>Phone: +8880 44338899</p>
+          <p>Email: <a href="mailto:info@colorlib.com">rohit@gmail.com</a></p>
+        </div>
+        <!-- Important Link -->
+        <div class="col-md-3 footer-column">
+          <h5>Important Link</h5>
+          <p><a href="#" style="text-decoration: none">View Project</a></p>
+          <p><a href="#" style="text-decoration: none">Contact Us</a></p>
+          <p><a href="#" style="text-decoration: none">Testimonial</a></p>
+          <p><a href="#" style="text-decoration: none">Properties</a></p>
+          <p><a href="#" style="text-decoration: none">Support</a></p>
+        </div>
+        <!-- Newsletter -->
+        <div class="col-md-3 footer-column">
+          <h5>Newsletter</h5>
+          <p>Heaven fruitful doesn't over lesser in days. Appear creeping.</p>
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Email Address">
+            <button class="btn btn-danger" type="button"><i class="bi bi-send"></i></button>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row mt-4">
+        <div class="col text-center">
+          <img src="logo.png" alt="Job Finder" class="mb-2">
+          <div class="stats">
+            <span>5000+</span> Talented Hunter &nbsp;&nbsp;
+            <span>451</span> Talented Hunter &nbsp;&nbsp;
+            <span>568</span> Talented Hunter
+          </div>
+        </div>
+      </div>
+  
+      <div class="footer-bottom mt-4 text-center">
+        <p>©2024 All rights reserved | This template is made with <span style="color: #ff3366;">❤</span> by Eva</p>
+        <div class="social-icons">
+          <a href="#"><i class="bi bi-facebook"></i></a>
+          <a href="#"><i class="bi bi-twitter"></i></a>
+          <a href="#"><i class="bi bi-instagram"></i></a>
+          <a href="#"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>

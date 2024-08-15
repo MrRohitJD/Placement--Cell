@@ -1,0 +1,10 @@
+.card:hover {
+    background-color: #7e87b1; /* Change card background color on hover */
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+a{
+    text-decoration: none;
+   
+}
+

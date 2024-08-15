@@ -1,0 +1,8 @@
+<div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+    {% for group, options, index in widget.optgroups %}
+        {% for option in options %}
+            <input type="radio" class="btn-check" name="{{ widget.name }}" id="{{ widget.attrs.id }}_{{ forloop.counter }}" value="{{ option.value }}" {% if option.value == widget.value %}checked{% endif %} autocomplete="off">
+            <label class="btn btn-outline-primary" for="{{ widget.attrs.id }}_{{ forloop.counter }}">{{ option.label }}</label>
+        {% endfor %}
+    {% endfor %}
+</div>

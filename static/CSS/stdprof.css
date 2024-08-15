@@ -1,0 +1,9 @@
+a {
+    text-decoration: none;
+    color: blue; /* Change this to your desired color */
+}
+
+p{
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}

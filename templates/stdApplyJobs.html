@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</head>
+{% load static %}
+<link rel="stylesheet" type="text/html" href="{% static " CSS/stdApplyJobs.css" %}">
+<style>
+    .card:hover {
+        background-color: #7e87b1;
+        box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+
+
+
+<body>
+    {% include "custom_widgets\ProfileNav.html" %}
+    <div class="container-fluid">
+        <div class="row">
+
+            {% if messages %}
+            {% for message in messages %}
+            <div class="alert mt-2 alert-{{ message.tags }} alert-dismissible fade show shadow-sm p-3 mb-2  rounded-3"
+                role="alert">
+                <strong>Message: </strong> {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div> {% endfor %}{% endif %}
+            <div class="container-fluid col-md-3 " style="background-color:rgb(238, 238, 238); height: 960px;">
+
+                <div style="position: relative;  " class="text-center">
+
+                    {% if student_info.profile_picture %}
+                    <img src="{{ student_info.profile_picture.url }}" class="rounded-circle mx-auto d-block mt-4"
+                        alt="Profile Photo" width="170" height="170" class="me-3">
+                    {% else %}
+                    <img src="https://th.bing.com/th/id/OIP.wRtvON_8JKRQghdROw5QvQHaHa?rs=1&pid=ImgDetMain"
+                        class="rounded-circle mx-auto d-block mt-4" alt="Rostelecom" width="170" height="170"
+                        class="me-3">
+                    {% endif %}
+
+                </div>
+                <div class="container-fluid py-3">
+                    <p><strong>Name</strong> :{{student_info.studentFirstname}} {{student_info.studentLastname}}
+                        <br><strong>Mobile Number</strong> :{{student_info.student_mob}}
+                        <br><strong>Email ID</strong> :{% if user.is_authenticated %}{{user.email}} {% endif %}
+                        <br><strong>University</strong> : {{student_info.std_university}}
+                        <br><strong>College</strong> : {{student_info.std_college}}
+                        <br><strong>Course</strong> : {{student_info.latest_edu}}
+                        <br><strong>Passing Year</strong> : {{student_info.passing_year}}
+                        <br><strong>Address</strong> : {{student_info.student_address}}
+                    </p>
+                </div>
+                <div class="h4 pb-2 mb-4 text-danger border-bottom border-danger"> </div>
+                <div class="container">
+                    <ul style="margin-top: 50px;margin-left: 3px;">
+                        
+                        <li style="margin-bottom: 10px; margin-right: 57px;"><a href="{% url "studentProfile" %}"
+                                style="text-decoration: none; color: #18304B;"><b>Profile</b></a></li>
+                        <li style="margin-bottom: 10px; margin-right: 57px;"><a href="{% url "studentApplyJob" %}"
+                                style="text-decoration: none; color: #18304B;"><b>Applyed Jobs</b></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container-fluid col-md-9 ">
+
+                <div class="stdPic my-4 text-center">
+                    <h3 class="text-left">You Applyed Jobs </h3>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        {% for applyJobs in applyJobs %}
+                        <div class="col-sm-4 mb-3">
+                            <a href="/jobdetails/{{ applyJobs.id }}">
+                                <div class="card bg-light w-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ applyJobs.job_title |slice:":25" }}..</h5>
+                                        <p class="card-text">
+                                            {{ applyJobs.company_name |slice:":25" }}..<br>
+                                            {{ applyJobs.location |slice:":25" }}..<br>
+                                            <small>{{ applyJobs.created_at }}</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+
+    </script>
+
+</html>

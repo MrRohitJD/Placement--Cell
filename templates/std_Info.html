@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    {% load static %}
+    <link rel="stylesheet" href="{% static " CSS\stdprof.css" %}">
+
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            table-layout: fixed;
+            /* Ensure columns have fixed widths */
+        }
+
+        th,
+        td {
+            border: 1px solid;
+            padding: 15px;
+            text-align: left;
+            white-space: nowrap;
+            /* Prevent text from wrapping */
+            overflow: hidden;
+            /* Hide overflowed content */
+            text-overflow: ellipsis;
+            /* Show ellipses for overflowed text */
+            position: relative;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            resize: horizontal;
+            overflow: auto;
+        }
+
+        .resizer {
+            width: 5px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: col-resize;
+            user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "custom_widgets/ProfileNav.html" %}
+
+    <div class="container">
+        <h3 class="my-5 text-center"><b style="color:#28395a;">All student information</b></h3>
+    </div>
+    <div class="container">
+        <table class="table table-success table-striped table-hover">
+            <thead>
+                <tr class="">
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Mobile</th>
+                    <th>Roll Number</th>
+                    <th>University</th>
+                    <th>college</th>
+                    <th>Education</th>
+                    <th>Passing year</th>
+                    <th>mark</th>
+                    <th>skills</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for student in student %}
+                <tr>
+                    <td>{{student.studentFirstname}}</td>
+                    <td>{{student.studentFirstname}}</td>
+                    <td>{{student.student_mob}}</td>
+                    <td>{{student.student_rollNo}}</td>
+                    <td>{{student.std_university}}</td>
+                    <td>{{student.std_college}}</td>
+                    <td>{{student.latest_edu}}</td>
+                    <td>{{student.passing_year}}</td>
+                    <td>{{student.mark}}</td>
+                    <td>{{student.skills}}</td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </table>
+    </div>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+</html>

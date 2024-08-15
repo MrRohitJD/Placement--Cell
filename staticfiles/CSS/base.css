@@ -1,0 +1,65 @@
+#link1,
+#link2,
+#link3,
+#link4 {
+
+  font-family: "Overpass", sans-serif;
+  color: #18304B;
+  font-weight: 700;
+  padding: 20px 1px;
+  display: block;
+  font-size: 18px;
+  transition: all .3s ease-out 0s;
+  text-transform: capitalize;
+  position: relative;
+
+}
+
+
+
+.navigation{
+  background-color: #eef1ff;
+}
+
+
+  /* ---------------------footer */
+.footer {
+    background-color: #101223;
+    color: #fff;
+    padding: 50px 0;
+  }
+  .footer .footer-column {
+    margin-bottom: 30px;
+  }
+  .footer .footer-column h5 {
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ff3366;
+  }
+  .footer .footer-column p, .footer .footer-column a {
+    color: #bbb;
+    font-size: 14px;
+  }
+  .footer .footer-column a:hover {
+    color: #fff;
+  }
+  .footer .footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+  .footer .social-icons a {
+    color: #bbb;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  .footer .social-icons a:hover {
+    color: #ff3366;
+  }
+  .footer .stats span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff3366;
+  }
